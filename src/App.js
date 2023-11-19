@@ -1,9 +1,12 @@
-import Form from "./Form";
-import Tasks from "./Tasks";
-import HeadlineButtons from "./HeadlineButtons";
-import Section from "./Section";
-import Header from "./Header";
-import Main from "./Main";
+import React from 'react';
+
+import { Form }  from 'react';
+import { Tasks }  from 'react';
+import { HeadlineButtons }  from 'react';
+import { Section }  from 'react';
+import { Header }  from 'react';
+import { Main }  from 'react';
+
 
 const tasks = [
   { id: 1, content: "robic reacta", done: false },
