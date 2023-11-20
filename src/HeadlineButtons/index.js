@@ -1,9 +1,9 @@
-import "./style.css"
+import "./style.css";
 
 const HeadlineButtons = ({ tasks, hideDoneTasks }) => (
     tasks.length > 0 && (
         <div className="main__headlineButtons">
-            <button class="main__button">
+            <button className="main__button">
                 {hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
             </button>
             <button
