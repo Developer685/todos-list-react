@@ -13,7 +13,7 @@ const tasks = [
   { id: 2, content: "grac w gierki", done: false },
 ];
 
-const hideDoneTasks = [];
+const hideDone = [];
 
 const App = () => {
   return (
@@ -27,8 +27,8 @@ const App = () => {
 
       <Section
         title="Lista zadań"
-        body={<Tasks key={tasks.id} tasks={tasks} hideDoneTasks={hideDoneTasks} />}
-        extraHeaderContent={<HeadlineButtons key={tasks.id} tasks={tasks} hideDoneTasks={hideDoneTasks} />}
+        body={<Tasks key={tasks.id} tasks={tasks} hideDone={hideDone} />}
+        extraHeaderContent={<HeadlineButtons key={tasks.id} tasks={tasks} hideDone={hideDone} />}
       />
     </Main>
   );
