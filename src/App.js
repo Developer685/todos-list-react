@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Form from './Form';
 import Tasks from './Tasks';
@@ -8,16 +8,23 @@ import Header from './Header';
 import Main from './Main';
 
 
-const tasks = [
-  { id: 1, content: "robic reacta", done: false },
-  { id: 2, content: "grac w gierki", done: false },
-];
-
-const hideDone = [];
-
 const App = () => {
+
+  const [hideDone, setHideDone] = useState(false);
+  const [tasks, setTasks] = useState([
+    { id: 1, content: "robic reacta", done: false },
+    { id: 2, content: "grac w gierki", done: true },
+  ]);
+
+  const toggleHideDone = () => {
+    setHideDone(hideDone => !hideDone);
+  };
+  const removeTasks = (id) => {
+    setTasks(tasks => tasks.filter(task => task.id !== id));
+  }
+
   return (
-    <Main> 
+    <Main>
       <Header title="Lista zadań" />
 
       <Section
@@ -27,8 +34,13 @@ const App = () => {
 
       <Section
         title="Lista zadań"
-        body={<Tasks key={tasks.id} tasks={tasks} hideDone={hideDone} />}
-        extraHeaderContent={<HeadlineButtons key={tasks.id} tasks={tasks} hideDone={hideDone} />}
+        body={<Tasks key={tasks.id} tasks={tasks} hideDone={hideDone} removeTasks={removeTasks} />}
+        extraHeaderContent={
+          <HeadlineButtons
+            tasks={tasks} hideDone={hideDone} toggleHideDone={toggleHideDone}
+
+          />
+        }
       />
     </Main>
   );
