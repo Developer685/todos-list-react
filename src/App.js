@@ -11,6 +11,7 @@ import Main from './Main';
 const App = () => {
 
   const [hideDone, setHideDone] = useState(false);
+
   const [tasks, setTasks] = useState([
     { id: 1, content: "robic reacta", done: false },
     { id: 2, content: "grac w gierki", done: true },
@@ -21,6 +22,14 @@ const App = () => {
   };
   const removeTasks = (id) => {
     setTasks(tasks => tasks.filter(task => task.id !== id));
+  }
+  const toggleTaskDone = (id) => {
+    setTasks(tasks => tasks.map(task => {
+      if(task.id === id){
+        return {...tasks, done: !task.done};
+      }
+      return task;
+    }));
   }
 
   return (
@@ -34,7 +43,7 @@ const App = () => {
 
       <Section
         title="Lista zadań"
-        body={<Tasks key={tasks.id} tasks={tasks} hideDone={hideDone} removeTasks={removeTasks} />}
+        body={<Tasks key={tasks.id} tasks={tasks} hideDone={hideDone} removeTasks={removeTasks} toggleTaskDone={toggleTaskDone} />}
         extraHeaderContent={
           <HeadlineButtons
             tasks={tasks} hideDone={hideDone} toggleHideDone={toggleHideDone}
