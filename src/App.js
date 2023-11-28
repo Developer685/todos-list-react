@@ -25,12 +25,18 @@ const App = () => {
   }
   const toggleTaskDone = (id) => {
     setTasks(tasks => tasks.map(task => {
-      if(task.id === id){
-        return {...tasks, done: !task.done};
+      if (task.id === id) {
+        return { ...tasks, done: !task.done };
       }
       return task;
     }));
   }
+
+  const setAllDone = () => {
+    setTasks(tasks => tasks.map(task => ({
+      ...task, done: true
+    })));
+  };
 
   return (
     <Main>
@@ -46,7 +52,7 @@ const App = () => {
         body={<Tasks key={tasks.id} tasks={tasks} hideDone={hideDone} removeTasks={removeTasks} toggleTaskDone={toggleTaskDone} />}
         extraHeaderContent={
           <HeadlineButtons
-            tasks={tasks} hideDone={hideDone} toggleHideDone={toggleHideDone}
+            tasks={tasks} hideDone={hideDone} toggleHideDone={toggleHideDone} setAllDone={setAllDone}
 
           />
         }
