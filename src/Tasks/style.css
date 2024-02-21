@@ -83,6 +83,7 @@
 
 .tasks__content--done {
     text-decoration: line-through;
+    word-break: break-word;
 
     .tasks {
         list-style: none;
