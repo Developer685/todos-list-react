@@ -1,6 +1,12 @@
 # Task list
 
-Description
+## Author: Jakub Kulik
+
+## Desctiption
+This app serves for better organization tasks during day, you can mark what you have done and what is still waiting.
+## Quick look
+
+![Quick look]()
 
 ## Available Scripts
 

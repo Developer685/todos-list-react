@@ -13,8 +13,9 @@ const App = () => {
   const [hideDone, setHideDone] = useState(false);
 
   const [tasks, setTasks] = useState([
-    { id: 1, content: "robic reacta", done: false },
-    { id: 2, content: "grac w gierki", done: false },
+    { id: 1, content: "Zrobić zakupy", done: false },
+    { id: 2, content: "Zrobić obiad", done: true },
+    { id: 3, content: "Pójść na trening", done: false }
   ]);
 
   const toggleHideDone = () => {
@@ -41,14 +42,16 @@ const App = () => {
   };
 
   const addNewTask = (content) => {
-    setTasks(tasks => [
-      ...tasks,
-      {
-        content,
-        done: false,
-        id: tasks.length ? tasks[tasks.length - 1].id + 1 : 1,
-      }
-    ]);
+    if (content !== "") {
+      setTasks(tasks => [
+        ...tasks,
+        {
+          content,
+          done: false,
+          id: tasks.length ? tasks[tasks.length - 1].id + 1 : 1,
+        }
+      ]);
+    }
   };
 
   return (
