@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Form from './Form';
 import Tasks from './Tasks';
@@ -9,14 +9,17 @@ import Main from './Main';
 
 
 const App = () => {
+  const getSavedTask = () => {
+
+    const savedTask = localStorage.getItem("tasks");
+    if (savedTask !== "") {
+      return JSON.parse(savedTask);
+    };
+  };
 
   const [hideDone, setHideDone] = useState(false);
 
-  const [tasks, setTasks] = useState([
-    { id: 1, content: "Zrobić zakupy", done: false },
-    { id: 2, content: "Zrobić obiad", done: true },
-    { id: 3, content: "Pójść na trening", done: false }
-  ]);
+  const [tasks, setTasks] = useState(getSavedTask);
 
   const toggleHideDone = () => {
     setHideDone(hideDone => !hideDone);
@@ -53,6 +56,9 @@ const App = () => {
       ]);
     }
   };
+
+  useEffect(() => { localStorage.setItem("tasks", JSON.stringify(tasks)) }, [tasks]);
+
 
   return (
     <Main>
