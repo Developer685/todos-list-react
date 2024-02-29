@@ -72,12 +72,11 @@ const App = () => {
       <Section
         title="Lista zadań"
         body={<Tasks tasks={tasks} hideDone={hideDone} removeTasks={removeTasks} toggleTaskDone={toggleTaskDone} />}
-        extraHeaderContent={
-          <HeadlineButtons
-            tasks={tasks} hideDone={hideDone} toggleHideDone={toggleHideDone} setAllDone={setAllDone}
+        extraHeaderContent={<HeadlineButtons
+          tasks={tasks} hideDone={hideDone} toggleHideDone={toggleHideDone} setAllDone={setAllDone}
+        />}
 
-          />
-        }
+
       />
     </Main>
   );

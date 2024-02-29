@@ -5,10 +5,10 @@ const Section = ({ title, body, extraHeaderContent }) => (
         <header>
             <h2 className="section__headline">
                 {title}
+                {extraHeaderContent}
             </h2>
         </header>
-        <div className="content__section">
-            {extraHeaderContent}
+        <div className="section__body">
             {body}
         </div>
 
