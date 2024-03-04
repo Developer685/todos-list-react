@@ -14,7 +14,11 @@ const App = () => {
     const savedTask = localStorage.getItem("tasks");
     if (savedTask !== "") {
       return JSON.parse(savedTask);
-    };
+    }
+    else {
+      return savedTask = [];
+    }
+
   };
 
   const [hideDone, setHideDone] = useState(false);
