@@ -12,11 +12,11 @@ const App = () => {
   const getSavedTask = () => {
 
     const savedTask = localStorage.getItem("tasks");
-    if (savedTask !== "") {
+    if (savedTask !== null) {
       return JSON.parse(savedTask);
     }
     else {
-      return savedTask = [];
+      return [];
     }
 
   };
