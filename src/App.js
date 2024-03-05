@@ -70,7 +70,7 @@ const App = () => {
 
       <Section
         title="Dodaj nowe zadanie"
-        body={<Form key={tasks.id} addNewTask={addNewTask} />}
+        body={<Form addNewTask={addNewTask} />}
       />
 
       <Section
