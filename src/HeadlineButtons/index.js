@@ -1,22 +1,23 @@
+
+import { StyledHeadlineButtons, Button } from "./styled";
 import "./style.css";
 
 const HeadlineButtons = ({ tasks, hideDone, toggleHideDone, setAllDone }) => (
-    <div className="main__headlineButtons">
+    <StyledHeadlineButtons>
         {tasks.length > 0 && (
             <>
-                <button onClick={toggleHideDone} className="main__button">
+                <Button onClick={toggleHideDone} >
                     {hideDone ? "Pokaż" : "Ukryj"} ukończone
-                </button>
-                <button
-                    className="main__button"
+                </Button>
+                <Button
                     disabled={tasks.every(({ done }) => done)}
                     onClick={setAllDone}
                 >
                     Ukończ wszystkie
-                </button>
+                </Button>
             </>
         )}
-    </div >
+    </StyledHeadlineButtons >
 );
 
 

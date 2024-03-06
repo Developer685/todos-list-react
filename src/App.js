@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
-
 import Form from './Form';
 import Tasks from './Tasks';
 import HeadlineButtons from './HeadlineButtons';
 import Section from './Section';
 import Header from './Header';
-import Main from './Main';
 
 
 const App = () => {
@@ -65,7 +63,8 @@ const App = () => {
 
 
   return (
-    <Main>
+
+    <main className="main">
       <Header title="Lista zadań" />
 
       <Section
@@ -79,10 +78,9 @@ const App = () => {
         extraHeaderContent={<HeadlineButtons
           tasks={tasks} hideDone={hideDone} toggleHideDone={toggleHideDone} setAllDone={setAllDone}
         />}
-
-
       />
-    </Main>
+    </main>
+
   );
 }
 
