@@ -4,7 +4,7 @@ export const StyledHeadlineButtons = styled.div`
     padding: 1%;
 `;
 export const Button = styled.button`
-    background-color: none;
+    background-color: white;
     border: none;
     font-size: 18px;
     color: teal;
