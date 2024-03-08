@@ -1,3 +1,7 @@
+import { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
+
+export const GlobalStyle = createGlobalStyle`
 html {
   box-sizing: border-box;
 }
@@ -11,9 +15,10 @@ body {
   font-family: "Open Sans", sans-serif;
   background-color: #eee;
 }
+`;
 
-.main {
+export const Main = styled.main`
   max-width: 1000px;
   padding: 20px;
   margin: 0 auto;
-}
+`;

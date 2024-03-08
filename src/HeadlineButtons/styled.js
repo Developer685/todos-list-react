@@ -4,10 +4,10 @@ export const StyledHeadlineButtons = styled.div`
     padding: 1%;
 `;
 export const Button = styled.button`
-    background-color: white;
+    background: none;
     border: none;
     font-size: 18px;
-    color: teal;
+    color: ${({ theme }) => theme.color.teal};
     transition: 0.5s;
 
 &:hover{
@@ -17,12 +17,16 @@ export const Button = styled.button`
     transition: 0.5s;
 }
 
-&disabled{
+&:disabled{
     color: #999;
     cursor: default;
 }
 
-@media(max-width:767px){
+&:active{
+    filter: brightness(120%);
+}
+
+@media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
     transform: scale(1.1);
     transition: 0.5s;
 }

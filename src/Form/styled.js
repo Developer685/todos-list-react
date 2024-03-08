@@ -19,15 +19,13 @@ export const TaskInput = styled.input`
 
 export const TaskButton = styled.button`
     padding: 10px;
-    color: white;
+    color: ${({ theme }) => theme.color.white};
     border: none;
-    background-color: teal;
+    background-color: ${({ theme }) => theme.color.teal};
     transition: 0.5s;
+
     &:hover{
-    background-color: rgb(1, 182, 182);
+    filter: brightness(110%);
     transform: scale(1.1);
     }
 `;
-
-
-

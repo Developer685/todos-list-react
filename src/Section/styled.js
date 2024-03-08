@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const StyledSection = styled.section`
-    background-color: white;
+    background-color: ${({ theme }) => theme.color.white};
     padding-bottom: 2%;
     border-radius: 5px;
-    box-shadow: 10px 10px 45px -30px rgba(66, 68, 90, 1);
+    box-shadow: 10px 10px 45px -30px ${({ theme }) => theme.color.gunPowder};
 `;
 
 export const StyledHeadlineSection = styled.h2`

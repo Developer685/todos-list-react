@@ -47,27 +47,8 @@
     background-color: hsl(120, 48%, 53%);
 }
 
-
-
-.tasks__doneButton {
-    justify-content: start;
-    padding: 1px 0px 0px 0px;
-    height: 30px;
-    width: 30px;
-    background-color: hsl(120, 56%, 34%);
-    border: none;
-    transition: 0.5s;
-}
-
-.tasks__doneButton:hover {
-    padding: 1px 0px 0px 0px;
-    background-color: hsl(120, 55%, 43%);
-    border: none;
-    transform: scale(1.1);
-}
-
 .tasks__deleteButton {
-    background-color: hsl(350, 84%, 46%);
+    background-color: #d81334;
     color: whitesmoke;
     height: 30px;
     width: 30px;

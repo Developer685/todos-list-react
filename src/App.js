@@ -4,6 +4,7 @@ import Tasks from './Tasks';
 import HeadlineButtons from './HeadlineButtons';
 import Section from './Section';
 import Header from './Header';
+import { Main } from './GlobalStyle';
 
 
 const App = () => {
@@ -64,7 +65,7 @@ const App = () => {
 
   return (
 
-    <main className="main">
+    <Main>
       <Header title="Lista zadań" />
 
       <Section
@@ -79,7 +80,7 @@ const App = () => {
           tasks={tasks} hideDone={hideDone} toggleHideDone={toggleHideDone} setAllDone={setAllDone}
         />}
       />
-    </main>
+    </Main>
 
   );
 }

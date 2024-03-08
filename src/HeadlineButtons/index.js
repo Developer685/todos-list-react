@@ -1,6 +1,5 @@
 
 import { StyledHeadlineButtons, Button } from "./styled";
-import "./style.css";
 
 const HeadlineButtons = ({ tasks, hideDone, toggleHideDone, setAllDone }) => (
     <StyledHeadlineButtons>
