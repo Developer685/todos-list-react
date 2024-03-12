@@ -3,8 +3,8 @@ import styled, { css } from "styled-components";
 export const List = styled.ul`
     list-style: none;
     margin: auto;
-    padding-left: 2%;
-    padding-right: 2%;
+    padding-left: 3%;
+    padding-right: 3%;
 `;
 
 export const Item = styled.li`
