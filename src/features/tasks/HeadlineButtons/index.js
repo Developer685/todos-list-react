@@ -16,7 +16,7 @@ const HeadlineButtons = ({ tasks, hideDone, toggleHideDone, setAllDone }) => (
                 </Button>
             </>
         )}
-    </StyledHeadlineButtons >
+    </StyledHeadlineButtons>
 );
 
 

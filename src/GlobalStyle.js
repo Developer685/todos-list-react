@@ -2,6 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
+
 html {
   box-sizing: border-box;
 }
@@ -15,6 +16,7 @@ body {
   font-family: "Open Sans", sans-serif;
   background-color: #eee;
 }
+
 `;
 
 export const Main = styled.main`
