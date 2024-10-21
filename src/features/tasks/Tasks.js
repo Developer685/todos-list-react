@@ -1,3 +1,4 @@
+
 import Form from './Form';
 import TasksList from './TasksList';
 import HeadlineButtons from './HeadlineButtons';
@@ -6,16 +7,14 @@ import Header from '../../common/Header';
 import { Main } from '../../GlobalStyle';
 import { useTasks } from '../../useTasks';
 
+
 const Tasks = () => {
 
   const {
-    tasks,
-    hideDone,
     removeTasks,
     toggleTaskDone,
     setAllDone,
     addNewTask,
-    toggleHideDone,
   } = useTasks();
 
   return (
@@ -30,10 +29,17 @@ const Tasks = () => {
 
       <Section
         title="Lista zadań"
-        body={<TasksList tasks={tasks} hideDone={hideDone} removeTasks={removeTasks} toggleTaskDone={toggleTaskDone} />}
-        extraHeaderContent={<HeadlineButtons
-          tasks={tasks} hideDone={hideDone} toggleHideDone={toggleHideDone} setAllDone={setAllDone}
-        />}
+        body={
+          <TasksList
+            removeTasks={removeTasks}
+            oggleTaskDone={toggleTaskDone}
+          />
+        }
+        extraHeaderContent={
+          <HeadlineButtons
+            setAllDone={setAllDone}
+          />
+        }
       />
     </Main>
 
