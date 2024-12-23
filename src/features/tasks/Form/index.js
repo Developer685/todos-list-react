@@ -14,13 +14,13 @@ const Form = () => {
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        dispatch(addTask({
+        dispatch(
+            addTask({
             content: newTaskContent.trim(),
             done: false,
             id: nanoid,
         }));
 
-        // addNewTask(newTaskContent.trim());
         setNewTaskContent("");
         inputRef.current.focus();
     }
