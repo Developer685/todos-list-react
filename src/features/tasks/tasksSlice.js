@@ -17,13 +17,13 @@ const tasksSlice = createSlice({
         setAllDone: state => {
             state.tasks = state.tasks.map(task => ({ ...task, done: true }));
         },
-        toggleTaskDone: (state, { id }) => {
-            state.tasks = state.tasks.map(task =>
-                task.id === id ? { ...task, done: !task.done } : task
-            );
+        toggleTaskDone: ({ tasks }, { payload: taskId }) => {
+            const index = tasks.findIndex(({ id }) => id === taskId);
+            tasks[index].done = !tasks[index].done;
         },
-        removeTask: () => (state, { id }) => {
-            state.tasks = state.tasks.filter(task => task.id !== id);
+        removeTask: ({ tasks }, { payload: taskId }) => {
+            const index = tasks.findIndex(({ id }) => id === taskId);
+            tasks.splice(index, 1);
         },
 
     },
