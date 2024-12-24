@@ -14,7 +14,7 @@ const TasksList = () => {
             {tasks.map(task => (
                 <Item key={task.id} hidden={task.done && hideDone}>
                     <Button
-                        onClick={() => dispatch(toggleTaskDone())}
+                        onClick={() => dispatch(toggleTaskDone(task.id))}
                         toggleDone
                     >
                         {task.done ? "✔" : ""}
@@ -23,7 +23,7 @@ const TasksList = () => {
                         {task.content}
                     </Content>
                     <Button
-                        onClick={() => dispatch(removeTask())}
+                        onClick={() => dispatch(removeTask(task.id))}
                         remove
                     >
                         🗑

@@ -9,6 +9,7 @@ export const Button = styled.button`
     font-size: 18px;
     color: ${({ theme }) => theme.color.teal};
     transition: 0.5s;
+    margin-right: 10px;
 
 &:hover{
     cursor: pointer;

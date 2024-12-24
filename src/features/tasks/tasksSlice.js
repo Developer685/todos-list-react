@@ -9,13 +9,18 @@ const tasksSlice = createSlice({
     },
     reducers: {
         addTask: ({ tasks }, { payload }) => {
-            tasks.push(payload);
+            if (payload.content.trim() !== "") {
+                tasks.push(payload);
+            }
         },
         toggleHideDone: state => {
             state.hideDone = !state.hideDone;
         },
         setAllDone: state => {
-            state.tasks = state.tasks.map(task => ({ ...task, done: true }));
+            const allDone = state.tasks.every(task => task.done);
+            state.tasks.forEach(task => {
+                task.done = !allDone;
+            });
         },
         toggleTaskDone: ({ tasks }, { payload: taskId }) => {
             const index = tasks.findIndex(({ id }) => id === taskId);

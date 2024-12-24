@@ -18,7 +18,7 @@ const Form = () => {
             addTask({
             content: newTaskContent.trim(),
             done: false,
-            id: nanoid,
+            id: nanoid(),
         }));
 
         setNewTaskContent("");

@@ -8,16 +8,16 @@ const HeadlineButtons = () => {
     const dispatch = useDispatch();
 
     return (
-        
+
         <StyledHeadlineButtons>
-            {tasks.length > 0 && (
+            {(
                 <>
                     <Button onClick={() => dispatch(toggleHideDone())} >
                         {hideDone ? "Pokaż" : "Ukryj"} ukończone
                     </Button>
 
                     <Button onClick={() => dispatch(setAllDone())} >
-                        Ukończ wszystkie
+                        {tasks.every(task => task.done) ? "Oznacz wszystkie jako niedokończone" : "Oznacz wszystkie jako ukończone"}
                     </Button>
                 </>
             )}
