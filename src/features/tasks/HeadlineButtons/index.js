@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { StyledHeadlineButtons, Button } from "./styled";
-import { selectTasks, toggleHideDone, setAllDone } from "../tasksSlice";
+import { selectTasks, toggleHideDone, setAllDone, fetchExampleTasks } from "../tasksSlice";
 
 const HeadlineButtons = () => {
 
@@ -10,6 +10,9 @@ const HeadlineButtons = () => {
     return (
 
         <StyledHeadlineButtons>
+            <Button onClick={() => dispatch(fetchExampleTasks())} >
+                Pobierz przykładowe zadania
+            </Button>
             {(
                 <>
                     <Button onClick={() => dispatch(toggleHideDone())} >
@@ -17,7 +20,7 @@ const HeadlineButtons = () => {
                     </Button>
 
                     <Button onClick={() => dispatch(setAllDone())} >
-                        {tasks.every(task => task.done) ? "Oznacz wszystkie jako niedokończone" : "Oznacz wszystkie jako ukończone"}
+                        {tasks.every(task => task.done) ? "Odznacz wszyskie" : "Zakończ wszystkie"}
                     </Button>
                 </>
             )}
