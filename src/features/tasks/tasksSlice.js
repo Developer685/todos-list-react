@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getTasksFromLocalStorage, saveTasksInLocalStorage } from "./tasksLocalStorage";
 
 const tasksSlice = createSlice({
     name: 'tasks',
     initialState: {
-        tasks: [],
+        tasks: getTasksFromLocalStorage(),
         hideDone: false,
 
     },
@@ -11,6 +12,7 @@ const tasksSlice = createSlice({
         addTask: ({ tasks }, { payload }) => {
             if (payload.content.trim() !== "") {
                 tasks.push(payload);
+                saveTasksInLocalStorage(tasks);
             }
         },
         toggleHideDone: state => {
@@ -21,19 +23,23 @@ const tasksSlice = createSlice({
             state.tasks.forEach(task => {
                 task.done = !allDone;
             });
+            saveTasksInLocalStorage(state.tasks);
         },
         toggleTaskDone: ({ tasks }, { payload: taskId }) => {
             const index = tasks.findIndex(({ id }) => id === taskId);
             tasks[index].done = !tasks[index].done;
+            saveTasksInLocalStorage(tasks);
         },
         removeTask: ({ tasks }, { payload: taskId }) => {
             const index = tasks.findIndex(({ id }) => id === taskId);
             tasks.splice(index, 1);
+            saveTasksInLocalStorage(tasks);
         },
         fetchExampleTasks: () => { },
 
         setTasks: (state, { payload: tasks }) => {
             state.tasks = tasks;
+            saveTasksInLocalStorage(state.tasks);
         },
     }
 });
