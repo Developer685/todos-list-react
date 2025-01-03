@@ -1,11 +1,10 @@
 import Form from './Form';
 import TasksList from './TasksList';
-import HeadlineButtons from './HeadlineButtons';
+import HeadlineButtons from './Buttons';
 import Section from '../../common/Section';
 import Header from '../../common/Header';
 import { Main } from '../../GlobalStyle';
-
-
+import DownloadExampleTasksButton from './Buttons/DownloadButton';
 
 const Tasks = () => {
 
@@ -15,7 +14,9 @@ const Tasks = () => {
       <Header title="Lista zadań" />
 
       <Section
+
         title="Dodaj nowe zadanie"
+        extraHeaderContent={<DownloadExampleTasksButton />}
         body={<Form />}
       />
 

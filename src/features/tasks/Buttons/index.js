@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { StyledHeadlineButtons, Button } from "./styled";
-import { selectTasks, toggleHideDone, setAllDone, fetchExampleTasks } from "../tasksSlice";
+import { selectTasks, toggleHideDone, setAllDone } from "../tasksSlice";
 
 const HeadlineButtons = () => {
 
@@ -10,9 +10,6 @@ const HeadlineButtons = () => {
     return (
 
         <StyledHeadlineButtons>
-            <Button onClick={() => dispatch(fetchExampleTasks())} >
-                Pobierz przykładowe zadania
-            </Button>
             {(
                 <>
                     <Button onClick={() => dispatch(toggleHideDone())} >
@@ -27,6 +24,5 @@ const HeadlineButtons = () => {
         </StyledHeadlineButtons>
     )
 };
-
 
 export default HeadlineButtons;

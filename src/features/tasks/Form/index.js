@@ -5,7 +5,7 @@ import { addTask } from "../tasksSlice";
 import { nanoid } from "@reduxjs/toolkit";
 
 const Form = () => {
-    
+
     const [newTaskContent, setNewTaskContent] = useState("");
     const inputRef = useRef(null);
 
@@ -16,16 +16,17 @@ const Form = () => {
 
         dispatch(
             addTask({
-            content: newTaskContent.trim(),
-            done: false,
-            id: nanoid(),
-        }));
+                content: newTaskContent.trim(),
+                done: false,
+                id: nanoid(),
+            }));
 
         setNewTaskContent("");
         inputRef.current.focus();
     }
     return (
         <StyledForm onSubmit={onFormSubmit}>
+
             <TaskInput
                 ref={inputRef}
                 value={newTaskContent}
