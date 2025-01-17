@@ -31,6 +31,7 @@ export const Button = styled.button`
     ${({ toggleDone }) => toggleDone && css`
     background: ${({ theme }) => theme.color.forestGreen};
     `}
+    
 
     ${({ remove }) => remove && css`
     background: ${({ theme }) => theme.color.crimson};
@@ -40,6 +41,7 @@ export const Button = styled.button`
         filter: brightness(110%);
         transition: 0.5s;
         transform: scale(1.1);
+        cursor: pointer;
     }
 
     &:active{

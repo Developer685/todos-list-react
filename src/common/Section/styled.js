@@ -9,7 +9,7 @@ export const StyledSection = styled.section`
 
 export const StyledHeadlineSection = styled.h2`
     font-size: 25px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid ${({ theme}) => theme.color.alto};
     display: grid;
     display: flex;
     grid-template-columns: 2fr 1fr;

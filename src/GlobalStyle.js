@@ -13,7 +13,7 @@ html {
 
 body {
   margin: auto;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato", sans-serif;
   background-color: #eee;
 }
 

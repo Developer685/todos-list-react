@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { StyledHeadlineButtons, Button } from "./styled";
-import { selectTasks, toggleHideDone, setAllDone } from "../tasksSlice";
+import { selectTasks, toggleHideDone, setAllDone } from "../../tasksSlice";
 
 const HeadlineButtons = () => {
 

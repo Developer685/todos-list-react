@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 export const StyledHeadlineButtons = styled.div`
     padding: 1%;
+    &:hover{
+        cursor: pointer;
+    }
 `;
 export const Button = styled.button`
     background: none;
