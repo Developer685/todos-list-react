@@ -1,0 +1,7 @@
+{
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "selection",
+  "editor.cursorStyle": "line",
+  "editor.detectIndentation": false,
+  "editor.dragAndDrop": true
+}

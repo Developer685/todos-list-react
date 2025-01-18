@@ -8,25 +8,23 @@ import { useSelector } from 'react-redux';
 
 
 const TaskPage = () => {
-    const { id } = useParams();
-    const task = useSelector(state => getTaskById(state, id));
+  const { id } = useParams();
+  const task = useSelector(state => getTaskById(state, id));
 
-    return (
-
-        <Main>
-            <Header title="Szczegóły zadania" />
-            <Section
-                title={task ? task.content : "Zadanie nie istnieje"}
-                body={<>
-                    <Container>
-                        <strong>Ukończono:</strong> {task.done ? "Tak" : "Nie"}
-                    </Container>
-                </>
-                }
-            />
-        </Main>
-
-    );
+  return (
+    <Main>
+      <Header title="Szczegóły zadania" />
+      <Section
+        title={task ? task.content : "Przeprasza, zadanie nie istnieje 😢"}
+        body={!!task && (<>
+          <Container>
+            <strong>Ukończono:</strong> {task.done ? "Tak" : "Nie"}
+          </Container>
+        </>
+        )}
+      />
+    </Main>
+  );
 }
 
 export default TaskPage; 

@@ -1,23 +1,24 @@
-import { StyledBar, StyledNavLink } from "../styled";
+import { StyledNavLink } from "../styled";
+import { StyledNavigation } from "./styled";
 
 const Navigation = () => {
-    return (
-        <div>
+  return (
+    <div>
 
-            <nav>
-                <StyledBar>
-                    <div>
-                        <StyledNavLink activeClass="active" to="/zadania">Zadania</StyledNavLink>
-                    </div>
-                    <div>
-                        <StyledNavLink activeClass="active" to="/autor">O autorze</StyledNavLink>
-                    </div>
-                </StyledBar>
-            </nav>
+      <nav>
+        <StyledNavigation>
+          <div>
+            <StyledNavLink activeClass="active" to="/zadania">Zadania</StyledNavLink>
+          </div>
+          <div>
+            <StyledNavLink activeClass="active" to="/autor">O autorze</StyledNavLink>
+          </div>
+        </StyledNavigation>
+      </nav>
 
-        </div>
+    </div>
 
-    );
+  );
 };
 
 export default Navigation;

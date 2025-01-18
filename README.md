@@ -12,8 +12,9 @@ This app serves for better tasks organization during the day. You can mark, what
 ### Yout can try app here: [To-do-list](https://developer685.github.io/todos-list-react#/zadania)
 
 ### Technologies:
-- HTML
+- JSX
 - CSS
-- JavaScript
 - React
 - BEM convetion
+- Redux Toolkit
+- Redux Saga

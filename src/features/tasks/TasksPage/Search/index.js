@@ -1,33 +1,29 @@
 import { TaskInput } from "../Input/styled";
-import { useLocation } from "react-router-dom";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+
 import searchQuerryParamName from "../../searchQuerryParamName";
 import { StyledForm } from "../Form/styled";
+import { useQueryParameter, useReplaceQueryParameter } from "../../queryParameters";
+
 const Search = () => {
-    const location = useLocation();
-    const history = useHistory();
-    const query = (new URLSearchParams(location.search)).get(searchQuerryParamName);
+  const query = useQueryParameter(searchQuerryParamName);
+  const replaceQueryParameter = useReplaceQueryParameter();
 
-    const onInputChange = ({ target }) => {
-        const searchParams = new URLSearchParams(location.search);
+  const onInputChange = ({ target }) => {
+    replaceQueryParameter({
+      key: searchQuerryParamName,
+      value: target.value.trim() !== "" ? target.value : "",
+    });
+  };
 
-        if (target.value.trim() === "") {
-            searchParams.delete(searchQuerryParamName);
-        } else {
-            searchParams.set(searchQuerryParamName, target.value);
-        }
-        history.push(`${location.pathname}?${searchParams.toString()}`);
-    };
-
-    return (
-        <StyledForm>
-            <TaskInput
-                value={query || ""}
-                placeholder="Filtruj zadania"
-                onChange={onInputChange}
-            />
-        </StyledForm>
-    );
+  return (
+    <StyledForm>
+      <TaskInput
+        value={query || ""}
+        placeholder="Filtruj zadania"
+        onChange={onInputChange}
+      />
+    </StyledForm>
+  );
 };
 
 export default Search;
